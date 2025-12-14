@@ -175,4 +175,39 @@ li span { line-height: 1.4; }
   font-weight: 700;
   color: #64748b;
 }
+/* ===== スマホ対応 ===== */
+@media (max-width: 600px) {
+  body {
+    padding: 12px;
+  }
+
+  .app {
+    width: 100%;
+    padding: 16px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  button {
+    width: 100%;
+    margin-top: 8px;
+    font-size: 16px;
+  }
+
+  input {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  select {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  li {
+    font-size: 16px;
+  }
+}
 
