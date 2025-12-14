@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>チェックリストアプリ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="app">
+
+   <h1 id="pageTitle" class="title">チェックリスト</h1>
+<p class="subtitle">現場作業を素早く・確実に</p>
+
+    <div id="progressWrap">
+      <div id="progressText">完了率: 0%</div>
+      <progress id="progressBar" value="0" max="100"></progress>
+    </div>
+
+    <div>
+      <select id="templateSelect">
+        <option value="">テンプレを選ぶ</option>
+        <option value="out">出庫時チェック</option>
+        <option value="return">返却時チェック</option>
+        <option value="clean">清掃チェック</option>
+        <option value="fork">フォークリフト点検チェック</option>
+        <option value="washer">洗浄機点検チェック</option>
+        <option value="end">業務終了時の最終チェック</option>
+      </select>
+
+      <button id="applyTemplateBtn" class="primary">テンプレ投入</button>
+      <button id="clearBtn" class="danger">全消去</button>
+    </div>
+
+    <div style="margin-top: 10px;">
+      <input id="taskInput" type="text" placeholder="チェック項目を入力">
+      <button id="addBtn">追加</button>
+    </div>
+
+    <ul id="taskList" style="margin-top: 10px;"></ul>
+
+    <script src="app.js"></script>
+
+  </div>
+</body>
+</html>
