@@ -1,0 +1,184 @@
+.cart{
+  margin-top: 10px;
+  display:flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cart-item{
+  border: var(--b) solid var(--line);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  background: #fff;
+  display:grid;
+  grid-template-columns: 96px 1fr;
+}
+
+.cart-item__thumb{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight: 900;
+  border-right: var(--b) solid var(--line);
+  min-height: 96px;
+}
+
+.cart-item__body{
+  padding: 10px 12px;
+  display:flex;
+  flex-direction:column;
+  gap: 10px;
+}
+
+.cart-item__top{
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.cart-item__name{
+  font-weight: 900;
+  font-size: 16px;
+  min-width: 0;
+  overflow:hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.chip{
+  border: none;
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-weight: 900;
+  cursor: pointer;
+  color: var(--text);
+  white-space: nowrap;
+  background: var(--neutral);
+}
+.chip--danger{ background: var(--danger); }
+
+.cart-item__meta{
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.cart-item__price{
+  font-weight: 900;
+}
+
+.qty{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+}
+.qty__btn{
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: var(--r-md);
+  background: var(--neutral);
+  font-weight: 900;
+  font-size: 18px;
+  cursor:pointer;
+  color: var(--text);
+}
+.qty__num{
+  min-width: 26px;
+  text-align:center;
+  font-weight: 900;
+  font-size: 16px;
+}
+
+.cart-item__note{
+  border: var(--b) solid var(--line);
+  border-radius: var(--r-md);
+  padding: 8px 10px;
+  display:flex;
+  gap: 10px;
+  cursor: pointer;
+}
+.cart-item__note-label{
+  font-weight: 900;
+  white-space: nowrap;
+}
+.cart-item__note-text{
+  font-weight: 700;
+  opacity: .9;
+}
+
+.complete{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.complete__box{
+  border: var(--b) solid var(--line);
+  border-radius: var(--r-lg);
+  padding: 28px 20px;
+  text-align:center;
+  width: 100%;
+  max-width: 360px;
+  background:#fff;
+}
+.complete__title{
+  font-weight: 900;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.complete__number{
+  font-weight: 900;
+  font-size: 16px;
+}
+.complete__number .number{
+  display:block;
+  margin-top: 10px;
+  font-size: 32px;
+  letter-spacing: 4px;
+}
+/* =========================
+   カート：戻るボタン（下線なし・グレー）
+========================= */
+.btn-back{
+  background: #8e8e8e;        /* グレー */
+  color: #111 !important;
+
+ display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 45px;
+  width: 100%;
+
+  border-radius: var(--r-lg);   /* ★ 注文確定と同じ */
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+
+  text-decoration: none;
+  border: none;
+}
+
+
+/* aタグの全状態で下線を殺す */
+.btn-back:link,
+.btn-back:visited,
+.btn-back:hover,
+.btn-back:active,
+.btn-back:focus{
+  text-decoration: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  color: #111 !important;
+    line-height: 1;
+  text-decoration: none !important;
+}
+.order__img,
+.cart__img {
+  width: 100%;
+  height: 160px;       /* 好きな高さ */
+  object-fit: cover;   /* はみ出し防止 */
+  display: block;
+  border-radius: 12px;
+}

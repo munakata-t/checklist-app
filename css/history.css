@@ -1,0 +1,56 @@
+/* history.css（cart.css の変数とボタンを利用） */
+
+.h-container{
+  margin-top: 10px;
+  display:flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* 1日分のブロック */
+.day-block{
+  border: var(--b) solid var(--line);
+  border-radius: var(--r-lg);
+  background: #fff;
+  overflow: hidden;
+}
+
+/* 日付タイトル */
+.day-title{
+  margin: 0;
+  padding: 10px 12px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  background: var(--neutral);
+}
+
+/* 1注文 */
+.history-order{
+  padding: 12px;
+  display:flex;
+  flex-direction: column;
+  gap: 8px;
+  border-top: var(--b) solid var(--line);
+}
+
+.history-head{
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+  font-weight: 900;
+}
+
+.history-head .mono{
+  font-variant-numeric: tabular-nums;
+}
+
+.history-order ul{
+  margin: 0;
+  padding-left: 18px;
+}
+
+/* 削除ボタン（cart.css の chip を利用） */
+.history-actions{
+  display:flex;
+  justify-content:flex-end;
+}

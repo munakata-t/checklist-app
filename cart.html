@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>カート</title>
+  <link rel="stylesheet" href="./css/app.css" />
+  <link rel="stylesheet" href="./css/cart.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <a class="icon-btn" href="./history.html" aria-label="注文履歴へ">≡</a>
+      <h1 class="header__title">カート</h1>
+      <a class="icon-btn" href="./index.html" aria-label="閉じる">×</a>
+    </header>
+
+    <main class="main">
+      <section class="cart" id="cartList" aria-label="カート一覧"></section>
+
+      <section class="empty" id="cartEmpty" aria-label="カートが空のとき">
+        <div class="empty__box">カートは空です</div>
+      </section>
+    </main>
+
+    <footer class="bottom">
+      <div class="bottom__total">合計：<span class="mono" id="cartTotal">0</span>円</div>
+      <div class="bottom__actions">
+        <a href="./index.html" class="btn btn-back">戻る</a>
+      <button id="checkoutBtn" class="btn btn--mint btn--wide" type="button">注文確定</button>
+
+      </div>
+    </footer>
+  </div>
+<script defer src="./js/firebase-config.js"></script>
+<script defer src="./js/firebase.js"></script>
+<script defer src="./js/shared-db.js"></script>
+
+<script defer src="./js/storage.js"></script>
+<script defer src="./js/cart.js"></script>
+</body>
+</html>

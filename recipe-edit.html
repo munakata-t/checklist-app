@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>レシピ編集</title>
+  <link rel="stylesheet" href="./css/app.css" />
+  <link rel="stylesheet" href="./css/recipes.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <a class="icon-btn" href="./recipes.html" aria-label="一覧へ">←</a>
+      <h1 class="header__title">レシピ編集</h1>
+      <button class="icon-btn" type="button" id="deleteRecipeBtn" aria-label="削除">×</button>
+    </header>
+
+    <main class="main">
+      <section class="panel" aria-label="基本">
+        <h2 class="panel__title">基本</h2>
+
+        <label class="field">
+          <span class="field__label">レシピ名</span>
+          <input class="field__input" id="rName" type="text" placeholder="例：オムライス" />
+        </label>
+
+        <label class="field">
+          <span class="field__label">画像URL（手入力もOK）</span>
+          <input
+            class="field__input"
+            id="rImage"
+            type="text"
+            placeholder="./images/omelette.jpg または https://〜"
+          />
+        </label>
+
+        <label class="field">
+          <span class="field__label">写真を添付（スマホOK）</span>
+          <input
+            class="field__input"
+            id="rFile"
+            type="file"
+            accept="image/*"
+            capture="environment"
+          />
+          <div class="field__help">※ 写真は自動で縮小して保存します（容量対策）</div>
+        </label>
+
+        <div class="preview" aria-label="プレビュー">
+          <div class="preview__label">プレビュー</div>
+          <img id="rPreview" class="preview__img" alt="プレビュー" />
+        </div>
+
+        <div class="row">
+          <label class="field">
+            <span class="field__label">カテゴリ</span>
+            <select class="field__input" id="rCategory">
+              <option>ご飯</option>
+              <option>パスタ</option>
+              <option>デザート</option>
+              <option>飲み物</option>
+              <option>その他麺類</option>
+              <option>サイドメニュー</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span class="field__label">目安時間</span>
+            <input class="field__input" id="rTime" type="text" placeholder="例：10分" />
+          </label>
+        </div>
+
+        <label class="field">
+          <span class="field__label">タグ（カンマ区切り）</span>
+          <input class="field__input" id="rTags" type="text" placeholder="例：簡単, 子ども向け" />
+        </label>
+
+        <div class="row">
+          <label class="field">
+            <span class="field__label">価格（円）</span>
+            <input class="field__input" id="rPrice" type="number" min="0" step="10" value="0" />
+          </label>
+
+          <label class="field field--toggle">
+            <span class="field__label">メニューに出す</span>
+            <div class="toggle">
+              <input type="checkbox" id="rPublished" />
+              <label for="rPublished">公開</label>
+            </div>
+          </label>
+        </div>
+
+        <!-- ✅ 追加：カテゴリーボタンのメイン画像に使う -->
+        <label class="field field--toggle">
+          <span class="field__label">カテゴリーボタンに表示</span>
+          <div class="toggle">
+            <input type="checkbox" id="rCatCover" />
+            <label for="rCatCover">ON</label>
+          </div>
+          <div class="field__help">
+            ※ ONにしたレシピ画像が、そのカテゴリボタンのメイン画像になります（同カテゴリで複数ONなら最新が採用）
+          </div>
+        </label>
+
+      </section>
+
+      <section class="panel" aria-label="材料">
+        <h2 class="panel__title">材料</h2>
+        <div class="list" id="ingList"></div>
+        <button class="btn btn--mint btn--wide" type="button" id="addIngBtn">＋ 材料を追加</button>
+      </section>
+
+      <section class="panel" aria-label="手順">
+        <h2 class="panel__title">手順</h2>
+        <div class="steps" id="stepList"></div>
+        <button class="btn btn--mint btn--wide" type="button" id="addStepBtn">＋ 手順を追加</button>
+      </section>
+
+      <section class="panel" aria-label="メモ">
+        <h2 class="panel__title">メモ</h2>
+        <textarea class="field__input field__textarea" id="rMemo" placeholder="コツ、注意点、アレンジなど"></textarea>
+      </section>
+    </main>
+
+    <footer class="bottom">
+      <div class="bottom__total" id="saveState">未保存</div>
+      <div class="bottom__actions">
+        <a class="btn btn--neutral btn--wide" href="./recipes.html">戻る</a>
+        <button class="btn btn--mint btn--wide" type="button" id="saveRecipeBtn">保存</button>
+      </div>
+    </footer>
+  </div>
+
+  <script src="./js/storage.js"></script>
+  <script src="./js/recipe-edit.js"></script>
+</body>
+</html>

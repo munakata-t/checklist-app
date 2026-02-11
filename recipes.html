@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>レシピ</title>
+  <link rel="stylesheet" href="./css/recipes.css" />
+</head>
+
+<body>
+  <div class="app">
+
+    <header class="header">
+      <a class="icon-btn" href="./index.html" aria-label="戻る">←</a>
+      <h1 class="header__title">レシピ</h1>
+      <span></span>
+    </header>
+
+    <main class="main">
+
+      <section class="panel">
+        <h2 class="panel__title">レシピ登録</h2>
+
+        <label class="label">料理名</label>
+        <input id="rName" class="input" type="text" placeholder="例：オムライス" />
+
+        <div class="row">
+          <div class="col">
+            <label class="label">カテゴリ</label>
+            <select id="rCat" class="input">
+              <option>ご飯</option>
+              <option>パスタ</option>
+              <option>デザート</option>
+              <option>飲み物</option>
+              <option>その他麺類</option>
+              <option>サイドメニュー</option>
+            </select>
+          </div>
+
+          <div class="col">
+            <label class="label">価格（円）</label>
+            <input id="rPrice" class="input" type="number" min="0" step="10" value="0" />
+          </div>
+        </div>
+        <label class="label">作り方</label>
+        <textarea
+         id="rSteps"
+         class="textarea"
+         rows="6"
+         placeholder="例：
+         1. フライパンでバターを溶かす
+         2. ご飯とケチャップを入れて炒める
+         3. 卵で包む
+         "></textarea>
+
+        <label class="label">画像（スマホ写真OK）</label>
+        <input id="rImg" class="input file" type="file" accept="image/*" />
+
+        <div class="preview">
+          <div id="previewBox" class="preview__box">
+            <div class="no-image">NO IMAGE</div>
+          </div>
+        </div>
+
+        <div class="toggles">
+          <label class="toggle">
+            <input id="rPub" type="checkbox" checked />
+            <span>メニューに表示</span>
+          </label>
+
+          <label class="toggle">
+            <input id="rCover" type="checkbox" />
+            <span>カテゴリボタン画像にする</span>
+          </label>
+        </div>
+
+        <button id="saveBtn" class="btn btn--mint" type="button">保存</button>
+      </section>
+
+      <section class="panel">
+        <h2 class="panel__title">登録レシピ</h2>
+
+        <div id="list" class="list"></div>
+
+        <div id="empty" class="empty">
+          <div class="empty__box">まだレシピがありません</div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+ <script defer src="./js/firebase-config.js"></script>
+<script defer src="./js/firebase.js"></script>
+<script defer src="./js/shared-db.js"></script>
+
+<script defer src="./js/storage.js"></script>
+<script defer src="./js/recipes.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>カテゴリー</title>
+  <link rel="stylesheet" href="./css/app.css" />
+  <link rel="stylesheet" href="./css/category.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <a class="icon-btn" href="./index.html" aria-label="戻る">←</a>
+      <h1 class="header__title">カテゴリー</h1>
+      <span></span>
+    </header>
+
+    <main class="main">
+      <!-- ※カテゴリー検索ボタンは作らない（要望通り） -->
+
+      <!-- ソート（人気順 / 追加順 / A→Z は残す） -->
+      <section class="cat-sort" aria-label="並び替え">
+        <button class="btn btn--neutral cat-sort__btn is-active" type="button" data-sort="popular">
+          人気順
+        </button>
+        <button class="btn btn--neutral cat-sort__btn" type="button" data-sort="added">
+          追加順
+        </button>
+        <button class="btn btn--neutral cat-sort__btn" type="button" data-sort="az">
+          A→Z
+        </button>
+      </section>
+
+      <!-- カテゴリーボタン一覧 -->
+      <section class="cat-grid" id="catGrid" aria-label="カテゴリーボタン"></section>
+
+      <section class="empty" id="catEmpty" aria-label="空のとき">
+      
+      </section>
+    </main>
+
+  
+
+    </footer>
+  </div>
+
+   <script defer src="./js/firebase-config.js"></script>
+<script defer src="./js/firebase.js"></script>
+<script defer src="./js/shared-db.js"></script>
+
+<script defer src="./js/storage.js"></script>
+<script defer src="./js/category.js"></script>
+</body>
+</html>

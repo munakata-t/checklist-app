@@ -1,0 +1,256 @@
+:root{
+  --app-max-mobile: 420px;
+  --app-max-desktop: 980px;
+
+  --pad: 14px;
+  --gap: 12px;
+
+  --bg: #ffffff;
+  --text: #111111;
+
+  --mint: #98AA9D;
+  --neutral: #B3C9D6;
+
+  --line: #1f1f1f;
+  --b: 2px;
+
+  --r-lg: 18px;
+  --r-md: 14px;
+  --r-sm: 12px;
+
+  --font: system-ui, -apple-system, "Hiragino Kaku Gothic ProN", "Noto Sans JP",
+          "Yu Gothic", "Meiryo", sans-serif;
+}
+
+*{ box-sizing:border-box; }
+
+body{
+  margin:0;
+  background:#f2f2f2;
+  font-family:var(--font);
+  color:var(--text);
+  display:flex;
+  justify-content:center;
+}
+
+.app{
+  width:100%;
+  max-width:var(--app-max-mobile);
+  min-height:100dvh;
+  background:var(--bg);
+}
+
+.header{
+  height: 58px;
+  padding: 0 10px;
+  display:grid;
+  grid-template-columns: 56px 1fr 56px;
+  align-items:center;
+}
+.header__title{
+  margin:0;
+  text-align:center;
+  font-weight:900;
+  letter-spacing:2px;
+  font-size: 20px;
+}
+.icon-btn{
+  width: 52px;
+  height: 44px;
+  border:none;
+  border-radius: var(--r-sm);
+  background:transparent;
+  font-size: 26px;
+  font-weight:900;
+  color:var(--text);
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.main{
+  padding: 0 var(--pad) 24px;
+}
+
+.panel{
+  margin-top: 12px;
+  border: var(--b) solid var(--line);
+  border-radius: var(--r-lg);
+  background:#fff;
+  padding: 14px;
+}
+.panel__title{
+  margin:0 0 10px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+.label{
+  font-weight:900;
+  font-size: 13px;
+  display:block;
+  margin: 10px 0 6px;
+}
+
+.input{
+  width:100%;
+  height: 42px;
+  border: var(--b) solid var(--line);
+  border-radius: var(--r-md);
+  padding: 0 10px;
+  font-weight:800;
+  background:#fff;
+}
+
+.input.file{
+  height:auto;
+  padding: 10px;
+}
+
+.row{
+  display:flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.col{
+  flex:1;
+  min-width: 160px;
+}
+
+.preview{ margin-top: 10px; }
+.preview__box{
+  height: 160px;
+  border: var(--b) solid var(--line);
+  border-radius: var(--r-lg);
+  overflow:hidden;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.preview__img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  display:block;
+}
+
+.no-image{
+  width:100%;
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#f2f2f2;
+  color:#666;
+  font-weight:900;
+  letter-spacing:2px;
+  font-size: 16px;
+}
+
+.toggles{
+  margin-top: 10px;
+  display:flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.toggle{
+  display:flex;
+  gap: 8px;
+  align-items:center;
+  font-weight:900;
+}
+
+.btn{
+  margin-top: 12px;
+  width:100%;
+  height: 44px;
+  border:none;
+  border-radius: var(--r-md);
+  font-weight:900;
+  cursor:pointer;
+}
+.btn--mint{ background: var(--mint); }
+
+.list{
+  margin-top: 12px;
+  display:flex;
+  flex-direction:column;
+  gap: 12px;
+}
+
+.item{
+  border: var(--b) solid var(--line);
+  border-radius: var(--r-lg);
+  overflow:hidden;
+  display:grid;
+  grid-template-columns: 120px 1fr;
+  background:#fff;
+}
+
+.item__photo{
+  height: 120px;
+  border-right: var(--b) solid var(--line);
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.item__photo img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  display:block;
+}
+
+.item__body{
+  padding: 10px 12px;
+  display:flex;
+  flex-direction:column;
+  gap: 6px;
+}
+.item__name{ font-weight:900; }
+.item__meta{ font-weight:800; font-size: 13px; opacity:.85; }
+
+.item__actions{
+  margin-top: 6px;
+  display:flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn-mini{
+  height: 36px;
+  padding: 0 12px;
+  border:none;
+  border-radius: 999px;
+  font-weight:900;
+  cursor:pointer;
+}
+.btn-mini--neutral{ background: var(--neutral); }
+.btn-mini--danger{ background:#ff6b6b; color:#fff; }
+
+.empty{ display:none; margin-top: 12px; }
+.empty__box{
+  border: var(--b) dashed var(--line);
+  border-radius: var(--r-lg);
+  padding: 18px;
+  text-align:center;
+  font-weight:900;
+  background:#fff;
+}
+
+@media (min-width: 900px){
+  .app{ max-width: var(--app-max-desktop); }
+  .panel{ padding: 16px; }
+}
+.textarea{
+  width:100%;
+  border: var(--b) solid var(--line);
+  border-radius: var(--r-md);
+  padding: 10px;
+  font-weight: 800;
+  font-family: inherit;
+  resize: vertical; /* 縦だけリサイズOK */
+}

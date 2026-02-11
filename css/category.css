@@ -1,0 +1,161 @@
+/* カテゴリー画面専用 */
+
+.cat-sort{
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.cat-sort__btn{
+  flex: 1;
+  min-width: 0;
+  opacity: .9;
+  background:#B3C9D6;
+}
+
+.cat-sort__btn.is-active{
+  background:#B3C9D6;
+}
+
+/* グリッド：スマホで綺麗に収まる */
+.cat-grid{
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+/* カテゴリーボタン（画像＋文字） */
+.cat-card{
+  position: relative;
+  border: var(--b) solid var(--line);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  background: #fff;
+  height: 120px;                 /* スマホで綺麗に収まる高さ */
+  cursor: pointer;
+  user-select: none;
+}
+
+/* 背景画像 */
+.cat-card__img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(1);
+  transform: scale(1.03);
+}
+
+/* うっすらグレーの膜 */
+.cat-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: rgba(200,200,200,.35);
+}
+
+/* 中央文字 */
+.cat-card__label{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight: 900;
+  letter-spacing: 2px;
+  font-size: 18px;
+  color: #111;
+  text-shadow: 0 2px 10px rgba(255,255,255,.65);
+  z-index: 1;
+}
+
+/* 画像なしの時 */
+.cat-card__placeholder{
+  width: 100%;
+  height: 100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight: 900;
+  opacity: .65;
+}
+
+/* PC */
+@media (min-width: 900px){
+  .cat-grid{
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .cat-card{
+    height: 140px;
+  }
+  .cat-card__label{
+    font-size: 20px;
+  }
+}
+/* =========================
+   下線 完全殺し（最終対策）
+========================= */
+.category-back-btn,
+.category-back-btn * {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+/* aタグの状態すべて */
+.category-back-btn:link,
+.category-back-btn:visited,
+.category-back-btn:hover,
+.category-back-btn:active {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  color: #111;
+}
+/* =========================
+   メニューへ戻るボタン（デザイン復活 + 下線なし）
+========================= */
+.category-back-btn{
+  /* aタグの下線・変な線を完全に消す */
+  text-decoration: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+
+  /* ボタン見た目 */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 44px;
+  padding: 0 18px;
+  border-radius: 999px;
+
+  background: #98AA9D;   /* 色 */
+  color: #111 !important;
+  font-weight: 900;
+  letter-spacing: .5px;
+
+  /* もしaに変なinline指定がついてても崩れないように */
+  line-height: 1;
+}
+
+/* 状態変化でも下線を出さない & 色が変わらない */
+.category-back-btn:link,
+.category-back-btn:visited,
+.category-back-btn:hover,
+.category-back-btn:active,
+.category-back-btn:focus{
+  text-decoration: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  color: #111 !important;
+}
+
+/* 押した感（任意：いらなければ消してOK） */
+.category-back-btn:active{
+  transform: translateY(1px);
+  opacity: .95;
+}
+

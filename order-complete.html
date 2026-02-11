@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>注文完了</title>
+  <link rel="stylesheet" href="./css/cart.css" />
+</head>
+
+<body>
+  <div class="app">
+
+    <!-- Header -->
+    <header class="header">
+      <span></span>
+      <h1 class="header__title">注文完了</h1>
+      <span></span>
+    </header>
+
+    <main class="main complete">
+      <div class="complete__box">
+        <div class="complete__title">ご注文ありがとうございました</div>
+
+        <div class="complete__number">
+          注文番号<br>
+          <span id="orderNumber" class="number">---</span>
+        </div>
+      </div>
+    </main>
+
+    <!-- Bottom -->
+    <footer class="bottom">
+      <div class="bottom__actions only">
+        <a class="btn btn--mint btn--wide" href="./index.html">
+          メニューに戻る
+        </a>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="./js/storage.js"></script>
+  <script src="./js/order-complete.js"></script>
+</body>
+</html>

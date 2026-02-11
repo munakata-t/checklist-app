@@ -1,0 +1,341 @@
+:root{
+  --app-max-mobile: 420px;
+  --app-max-desktop: 980px;
+
+  --pad: 14px;
+  --gap: 12px;
+
+  --bg: #ffffff;
+  --text: #111111;
+
+  /* あなた指定の色 */
+  --mint: #98AA9D;     /* Eucalyptus */
+  --neutral: #B3C9D6;  /* Mist */
+  --bottom: #2D3536;   /* Soot */
+
+  --line: #1f1f1f;
+  --b: 2px;
+
+  --r-lg: 18px;
+  --r-md: 14px;
+  --r-sm: 12px;
+
+  --font: system-ui, -apple-system, "Hiragino Kaku Gothic ProN", "Noto Sans JP",
+          "Yu Gothic", "Meiryo", sans-serif;
+
+  --btn-h: 44px;
+}
+
+*{ box-sizing: border-box; }
+
+body{
+  margin: 0;
+  background: #f2f2f2;
+  font-family: var(--font);
+  color: var(--text);
+  display:flex;
+  justify-content:center;
+}
+
+.app{
+  width: 100%;
+  max-width: var(--app-max-mobile);
+  min-height: 100dvh;
+  background: var(--bg);
+  display:flex;
+  flex-direction:column;
+}
+
+/* Header */
+.header{
+  height: 58px;
+  padding: 0 10px;
+  display:grid;
+  grid-template-columns: 56px 1fr 56px;
+  align-items:center;
+}
+.header__title{
+  margin: 0;
+  text-align:center;
+  font-weight: 900;
+  letter-spacing: 2px;
+  font-size: 20px;
+}
+.icon-btn{
+  width: 52px;
+  height: 44px;
+  border: none;
+  border-radius: var(--r-sm);
+  background: transparent;
+  font-size: 26px;
+  font-weight: 900;
+  cursor: pointer;
+  color: var(--text);
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+}
+
+/* Main */
+.main{
+  padding: 0 var(--pad) 120px;
+}
+
+/* Hero */
+.hero{ margin-top: 6px; }
+.hero__inner{
+  height: 120px;
+  
+  border-radius: var(--r-lg);
+  overflow:hidden;
+  position: relative;
+  background:#fff;
+}
+.hero__img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  
+}
+.hero__title{
+  position: absolute;
+  inset: 0;                 /* 上下左右 0 */
+  display: flex;
+  align-items: center;       /* 縦中央 */
+  justify-content: center;   /* 横中央 */
+
+  font-weight: 900;
+  font-size: 30px;
+  letter-spacing: 2px;
+  color: #efefef;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.45);
+  user-select: none;
+}
+
+
+/* Tabs */
+.tabs{
+  margin-top: var(--gap);
+  display:flex;
+  gap: 12px;
+}
+.tab-btn{
+  flex: 1;
+  height: 46px;
+  border: none;
+  border-radius: var(--r-lg);
+  background: var(--neutral);
+  font-weight: 900;
+  font-size: 18px;
+  cursor:pointer;
+  color: var(--text);
+}
+.tab-btn--active{ background: var(--mint); }
+.tab-link{
+  flex: 1;
+  height: 46px;
+  border-radius: var(--r-lg);
+  background: var(--neutral);
+  font-weight: 900;
+  font-size: 18px;
+  color: var(--text);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+}
+
+/* Sort */
+.sort{
+  margin-top: 12px;
+  display:flex;
+  gap: 10px;
+}
+.sort__btn{
+  flex: 1;
+  height: 40px;
+  border: none;
+  border-radius: var(--r-md);
+  background: #e9edf2;
+  font-weight: 900;
+  cursor:pointer;
+}
+.sort__btn.is-active{
+  background: #111;
+  color:#fff;
+}
+
+/* Buttons */
+.btn{
+  height: var(--btn-h);
+  padding: 0 14px;
+  border: none;
+  border-radius: var(--r-md);
+  font-weight: 900;
+  font-size: 16px;
+  cursor: pointer;
+  white-space: nowrap;
+  color: var(--text);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+.btn--neutral{ background: var(--neutral); }
+.btn--mint{ background: var(--mint); }
+.btn--wide{ min-width: 120px; }
+
+/* Grid */
+.grid{
+  margin-top: 16px;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 16px;
+}
+
+/* Card */
+.card{
+  border: var(--b) solid var(--line);
+  border-radius: var(--r-lg);
+  overflow:hidden;
+  background:#fff;
+}
+.card__photo{
+  height: 150px;
+  border-bottom: var(--b) solid var(--line);
+  background:#fff;
+}
+.card__img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display:block;
+}
+
+/* NO IMAGE */
+.no-image{
+  width:100%;
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#f2f2f2;
+  color:#666;
+  font-weight: 900;
+  letter-spacing: 2px;
+  font-size: 16px;
+}
+
+.card__footer{ padding: 10px 12px; }
+.card__name{ font-weight: 900; font-size: 14px; }
+.card__price{ font-weight: 900; font-size: 14px; }
+.card__sub{ font-weight: 800; font-size: 12px; opacity:.8; margin-top: 2px; }
+.card__actions{ margin-top: 10px; display:flex; }
+
+/* Bottom */
+.bottom{
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+
+  width: 100%;
+  max-width: var(--app-max-mobile);
+
+  background: var(--bottom);
+  padding: 12px var(--pad);
+  display:flex;
+  align-items:center;
+  gap: 12px;
+  color: #F2EFE2;
+}
+.bottom__total{
+  font-weight: 900;
+  font-size: 16px;
+  white-space: nowrap;
+}
+.bottom__actions{
+  margin-left: auto;
+  display:flex;
+  gap: 12px;
+}
+
+.mono{ font-variant-numeric: tabular-nums; }
+
+/* Empty */
+.empty{ display:none; margin-top: 14px; }
+.empty__box{
+  border: var(--b) dashed var(--line);
+  border-radius: var(--r-lg);
+  padding: 18px;
+  text-align:center;
+  font-weight: 900;
+  background:#fff;
+}
+
+/* PC */
+@media (min-width: 900px){
+  .app{ max-width: var(--app-max-desktop); }
+  .main{ padding: 8px 24px 120px; }
+  .hero__inner{ height: 160px; }
+  .grid{ grid-template-columns: repeat(4, 1fr); gap: 18px; }
+  .card__photo{ height: 140px; }
+  .bottom{ max-width: var(--app-max-desktop); padding: 14px 24px; }
+  .btn--wide{ min-width: 140px; }
+}
+
+
+.icon-btn--kitchen:active{
+  background: rgba(0,0,0,0.06);
+}
+
+/* タップしやすくする（スマホ） */
+.icon-btn--kitchen:active{
+  background: rgba(0,0,0,0.06);
+  border-radius: 12px;
+}
+.icon-btn--kitchen{
+  border: 2px solid #1f1f1f;
+  border-radius: 999px;
+  height: 36px;
+  margin-right: 4px;
+}
+/* =========================
+   キッチンボタン（スマホはみ出し対策）※これ1個だけ残す
+========================= */
+.header{
+  height: 58px;
+  padding: 0 10px;
+  display: grid;
+  grid-template-columns: 56px 1fr 56px;
+  align-items: center;
+}
+
+/* 右上キッチンだけ幅が足りないので “右列” を少し広げる */
+.header{
+  grid-template-columns: 56px 1fr 86px; /* ←ここが効く */
+}
+
+.icon-btn--kitchen{
+  width: auto;              /* 52px固定を解除 */
+  min-width: 72px;          /* キッチン文字が収まる */
+  height: 44px;             /* ヘッダー内で安定 */
+  padding: 0 10px;
+
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  white-space: nowrap;
+
+  border: 2px solid var(--line);
+  border-radius: 999px;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+.icon-btn--kitchen:active{
+  background: rgba(0,0,0,0.06);
+}
