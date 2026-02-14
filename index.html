@@ -1,77 +1,47 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>メニュー一覧</title>
-  <link rel="stylesheet" href="./css/index.css" />
-  <link rel="icon" href="./images/icon-192.png">
-
-<link rel="apple-touch-icon" href="./images/icon-192.png">
-
-<link rel="manifest" href="./manifest.json">
-<meta name="theme-color" content="#9aa89a">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>チェックリストアプリ</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
   <div class="app">
 
-    <header class="header">
-      <a href="./history.html" class="icon-btn" aria-label="注文履歴">≡</a>
-      <h1 class="header__title">メニュー</h1>
-      <a href="./kitchen.html" class="icon-btn icon-btn--kitchen" aria-label="キッチン">
-        キッチン
-      </a>
-    </header>
+   <h1 id="pageTitle" class="title">チェックリスト</h1>
+<p class="subtitle">現場作業を素早く・確実に</p>
 
-    <main class="main">
-      <!-- Top image -->
-      <section class="hero" aria-label="トップ画像">
-        <div class="hero__inner">
-          <img id="heroImg" class="hero__img" alt="トップ画像">
-          <div class="hero__title">Home Cafe</div>
-        </div>
-      </section>
+    <div id="progressWrap">
+      <div id="progressText">完了率: 0%</div>
+      <progress id="progressBar" value="0" max="100"></progress>
+    </div>
 
-      <!-- Tabs -->
-      <nav class="tabs" aria-label="切り替え">
-        <button id="tabMenu" class="tab-btn tab-btn--active" type="button">メニュー</button>
-        <a class="tab-link" href="./category.html">カテゴリー</a>
-      </nav>
+    <div>
+      <select id="templateSelect">
+        <option value="">テンプレを選ぶ</option>
+        <option value="out">出庫時チェック</option>
+        <option value="return">返却時チェック</option>
+        <option value="clean">清掃チェック</option>
+        <option value="fork">フォークリフト点検チェック</option>
+        <option value="washer">洗浄機点検チェック</option>
+        <option value="end">業務終了時の最終チェック</option>
+      </select>
 
-      <!-- Sort -->
-      <section class="sort" aria-label="並び替え">
-        <button class="sort__btn is-active" type="button" data-sort="popular">人気順</button>
-        <button class="sort__btn" type="button" data-sort="added">追加順</button>
-        <button class="sort__btn" type="button" data-sort="az">A→Z</button>
-      </section>
+      <button id="applyTemplateBtn" class="primary">テンプレ投入</button>
+      <button id="clearBtn" class="danger">全消去</button>
+    </div>
 
-      <!-- Menu grid -->
-      <section id="menuGrid" class="grid" aria-label="メニュー一覧"></section>
+    <div style="margin-top: 10px;">
+      <input id="taskInput" type="text" placeholder="チェック項目を入力">
+      <button id="addBtn">追加</button>
+    </div>
 
-      <!-- Empty -->
-      <section id="menuEmpty" class="empty" aria-label="メニューがないとき">
-        <div class="empty__box">表示できるメニューがありません</div>
-      </section>
-    </main>
+    <ul id="taskList" style="margin-top: 10px;"></ul>
 
-    <!-- Bottom bar -->
-    <footer class="bottom">
-      <div class="bottom__total">合計：<span id="bottomTotal" class="mono">0</span>円</div>
-
-      <div class="bottom__actions">
-        <a class="btn btn--neutral btn--wide" href="./recipes.html">レシピ</a>
-        <a class="btn btn--mint btn--wide" href="./cart.html">カート（<span id="cartCount">0</span>）</a>
-      </div>
-    </footer>
+    <script src="app.js"></script>
 
   </div>
-
-  <script defer src="./js/firebase-config.js"></script>
-<script defer src="./js/firebase.js"></script>
-<script defer src="./js/shared-db.js"></script>
-
-<script defer src="./js/storage.js"></script>
-<script defer src="./js/index.js"></script>
 </body>
 </html>
